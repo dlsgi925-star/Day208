@@ -56,5 +56,28 @@
       <p>이메일: haneul@example.com</p>
     </section>
   </main>
+
+  <script>
+    var slides = document.querySelectorAll('#slides .slide');
+    var prevBtn = document.getElementById('prev-btn');
+    var nextBtn = document.getElementById('next-btn');
+    var current = 0;
+
+    // 현재 프로젝트 하나만 보여주고, 처음/끝에서는 해당 화살표를 비활성화
+    function showSlide(index) {
+      current = index;
+      slides.forEach(function (slide, i) {
+        slide.hidden = i !== current;
+      });
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === slides.length - 1;
+    }
+
+    prevBtn.addEventListener('click', function () { showSlide(current - 1); });
+    nextBtn.addEventListener('click', function () { showSlide(current + 1); });
+
+    // 처음에는 프로젝트 1을 보여줌
+    showSlide(0);
+  </script>
 </body>
 </html>
