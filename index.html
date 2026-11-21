@@ -4,6 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>김하늘 마케팅 포트폴리오</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1d2433;
+      --muted: #6b7385;
+      --line: #e6e9f0;
+      --accent: #1a5cff;
+      --soft: #f3f6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, "Malgun Gothic", "Noto Sans KR", sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    /* 소개 */
+    #intro {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 20px 40px;
+      text-align: center;
+    }
+    #intro h1 { margin: 0 0 4px; font-size: 2.2rem; }
+    #intro p { margin: 0; color: var(--muted); }
+    #intro p + p {
+      margin-top: 14px;
+      color: var(--accent);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    main { max-width: 720px; margin: 0 auto; padding: 0 20px 64px; }
+    section { margin-bottom: 48px; }
+    h2 {
+      margin: 0 0 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+      font-size: 1rem;
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+
+    /* 슬라이더 */
+    #slider { display: flex; align-items: center; gap: 10px; }
+    #slides { flex: 1; min-width: 0; }
+    .slide {
+      min-height: 240px;
+      padding: 28px 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--soft);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide[hidden] { display: none; }
+    .slide h3 { margin: 0 0 16px; font-size: 1.1rem; }
+    .result { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .result strong {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 2.6rem;
+      line-height: 1.2;
+      font-weight: 800;
+    }
+    #prev-btn, #next-btn {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--accent);
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(26, 92, 255, .12);
+    }
+    #prev-btn:disabled, #next-btn:disabled {
+      color: #c3c8d4;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    /* 도구 */
+    #tools ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    #tools li {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* 연락처 */
+    #contact p { margin: 0; }
+  </style>
 </head>
 <body>
   <header id="intro">
@@ -23,17 +125,17 @@
         <div id="slides">
           <article class="slide">
             <h3>동네 카페 인스타그램 3개월 운영</h3>
-            <p class="result">팔로워 300명 → 2,100명</p>
+            <p class="result">팔로워 300명 → <strong>2,100명</strong></p>
           </article>
 
           <article class="slide">
             <h3>교내 축제 홍보</h3>
-            <p class="result">사전 신청 1,200명, 목표 대비 150%</p>
+            <p class="result">사전 신청 <strong>1,200명</strong>, 목표 대비 <strong>150%</strong></p>
           </article>
 
           <article class="slide">
             <h3>온라인 쇼핑몰 광고 운영</h3>
-            <p class="result">클릭률 1.2% → 3.4%</p>
+            <p class="result">클릭률 1.2% → <strong>3.4%</strong></p>
           </article>
         </div>
 
